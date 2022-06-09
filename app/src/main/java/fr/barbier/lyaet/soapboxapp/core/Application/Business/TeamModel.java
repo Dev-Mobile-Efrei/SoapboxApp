@@ -1,4 +1,4 @@
-package fr.barbierlyaet.Application.Business;
+package fr.barbier.lyaet.soapboxapp.core.Application.Business;
 
 import fr.barbierlyaet.domain.Grade;
 import fr.barbierlyaet.domain.Member;
