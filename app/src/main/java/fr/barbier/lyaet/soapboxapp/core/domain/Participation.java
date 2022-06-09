@@ -1,4 +1,4 @@
-package fr.barbierlyaet.domain;
+package fr.barbier.lyaet.soapboxapp.core.domain;
 
 import java.util.Collection;
 

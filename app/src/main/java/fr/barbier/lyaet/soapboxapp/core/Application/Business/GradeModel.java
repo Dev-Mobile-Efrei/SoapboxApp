@@ -1,6 +1,6 @@
-package fr.barbierlyaet.Application.Business;
+package fr.barbier.lyaet.soapboxapp.core.Application.Business;
 
-import fr.barbierlyaet.domain.Grade;
+import fr.barbier.lyaet.soapboxapp.core.domain.Grade;
 
 public class GradeModel extends BasicModel implements Grade {
     private int id;

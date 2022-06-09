@@ -1,10 +1,10 @@
-package fr.barbierlyaet.Application.Business;
-
-import fr.barbierlyaet.domain.Race;
-import fr.barbierlyaet.domain.Team;
+package fr.barbier.lyaet.soapboxapp.core.Application.Business;
 
 import java.util.Collection;
 import java.util.Date;
+
+import fr.barbier.lyaet.soapboxapp.core.domain.Race;
+import fr.barbier.lyaet.soapboxapp.core.domain.Team;
 
 public class RaceModel extends BasicModel implements Race {
 

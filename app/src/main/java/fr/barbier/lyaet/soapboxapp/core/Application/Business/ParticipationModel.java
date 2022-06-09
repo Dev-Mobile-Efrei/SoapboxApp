@@ -1,11 +1,11 @@
 package fr.barbier.lyaet.soapboxapp.core.Application.Business;
 
-import fr.barbierlyaet.domain.Grade;
-import fr.barbierlyaet.domain.Participation;
-import fr.barbierlyaet.domain.Race;
-import fr.barbierlyaet.domain.Team;
-
 import java.util.Collection;
+
+import fr.barbier.lyaet.soapboxapp.core.domain.Grade;
+import fr.barbier.lyaet.soapboxapp.core.domain.Participation;
+import fr.barbier.lyaet.soapboxapp.core.domain.Race;
+import fr.barbier.lyaet.soapboxapp.core.domain.Team;
 
 public class ParticipationModel extends BasicModel implements Participation {
 

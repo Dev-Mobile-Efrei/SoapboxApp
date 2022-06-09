@@ -1,6 +1,6 @@
-package fr.barbierlyaet.Application.Business;
+package fr.barbier.lyaet.soapboxapp.core.Application.Business;
 
-import fr.barbierlyaet.domain.Member;
+import fr.barbier.lyaet.soapboxapp.core.domain.Member;
 
 public class MemberModel extends BasicModel implements Member {
 

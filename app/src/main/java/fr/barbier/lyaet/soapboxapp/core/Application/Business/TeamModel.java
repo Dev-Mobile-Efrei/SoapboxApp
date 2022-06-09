@@ -1,12 +1,11 @@
 package fr.barbier.lyaet.soapboxapp.core.Application.Business;
 
-import fr.barbierlyaet.domain.Grade;
-import fr.barbierlyaet.domain.Member;
-import fr.barbierlyaet.domain.Team;
+import fr.barbier.lyaet.soapboxapp.core.domain.Member;
+import fr.barbier.lyaet.soapboxapp.core.domain.Team;
 
 import java.util.Collection;
 
-public class TeamModel extends BasicModel implements Team{
+public class TeamModel extends BasicModel implements Team {
 
     private String name;
 
