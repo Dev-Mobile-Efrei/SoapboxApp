@@ -9,8 +9,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 
+import fr.barbier.lyaet.soapboxapp.core.domain.Participation;
 import fr.barbier.lyaet.soapboxapp.core.domain.Race;
-import fr.barbier.lyaet.soapboxapp.core.domain.Team;
 
 @DatabaseTable(tableName = "race")
 public class RaceModel extends BasicModel implements Race {
@@ -18,11 +18,11 @@ public class RaceModel extends BasicModel implements Race {
     @DatabaseField()
     private String name;
 
-    @ForeignCollectionField(eager = true, orderColumnName = "race")
-    private ForeignCollection<Team> teams;
-
     @DatabaseField()
     private Date date;
+
+    @ForeignCollectionField(orderColumnName = "race")
+    private ForeignCollection<Participation> participations;
 
     public RaceModel(String name, Date date) {
         this.name = name;
@@ -35,8 +35,8 @@ public class RaceModel extends BasicModel implements Race {
     }
 
     @Override
-    public Collection<Team> getTeams() {
-        return Collections.unmodifiableCollection(this.teams);
+    public Collection<Participation> getParticipations() {
+        return Collections.unmodifiableCollection(this.participations);
     }
 
     @Override

@@ -4,6 +4,7 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 import fr.barbier.lyaet.soapboxapp.core.domain.Grade;
+import fr.barbier.lyaet.soapboxapp.core.domain.Participation;
 
 @DatabaseTable(tableName = "grade")
 public class GradeModel extends BasicModel implements Grade {
@@ -14,6 +15,9 @@ public class GradeModel extends BasicModel implements Grade {
     @DatabaseField
     private int value;
 
+    @DatabaseField(canBeNull = false, foreign = true)
+    private Participation participation;
+
     @Override
     public String getJury() {
         return this.jury;
@@ -22,5 +26,10 @@ public class GradeModel extends BasicModel implements Grade {
     @Override
     public int getValue() {
         return this.value;
+    }
+
+    @Override
+    public Participation getParticipation() {
+        return this.participation;
     }
 }

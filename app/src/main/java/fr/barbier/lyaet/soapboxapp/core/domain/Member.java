@@ -7,4 +7,6 @@ public interface Member {
     String getName();
 
     String getLastName();
+
+    Team getTeam();
 }

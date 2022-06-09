@@ -1,5 +1,6 @@
 package fr.barbier.lyaet.soapboxapp.core.Application.Business;
 
+import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
@@ -21,7 +22,7 @@ public class ParticipationModel extends BasicModel implements Participation {
     private Team team;
 
     @ForeignCollectionField(eager = true, orderColumnName = "participation")
-    private Collection<Grade> grades;
+    private ForeignCollection<Grade> grades;
 
     @DatabaseField
     private String time;
@@ -51,7 +52,7 @@ public class ParticipationModel extends BasicModel implements Participation {
 
     @Override
     public String getSoapBoxPicturePath() {
-        return soapBoxPicturePath;
+        return this.soapBoxPicturePath;
     }
 
     @Override
