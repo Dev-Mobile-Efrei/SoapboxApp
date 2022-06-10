@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.sql.SQLException;
 
+import fr.barbier.lyaet.soapboxapp.core.Application.Business.TeamModel;
 import fr.barbier.lyaet.soapboxapp.core.Application.api.SoapboxApi;
+import fr.barbier.lyaet.soapboxapp.core.Application.repository.RaceRepository;
+import fr.barbier.lyaet.soapboxapp.core.Application.repository.TeamRepository;
 import fr.barbier.lyaet.soapboxapp.core.domain.utils.Logger;
 import fr.barbier.lyaet.soapboxapp.core.infrastructure.DefaultDatabaseHelper;
 
