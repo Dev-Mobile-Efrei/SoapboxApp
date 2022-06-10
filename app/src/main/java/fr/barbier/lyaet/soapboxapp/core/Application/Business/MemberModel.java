@@ -16,7 +16,7 @@ public class MemberModel extends BasicModel implements Member {
     private String lastName;
 
     @DatabaseField(canBeNull = false, foreign = true)
-    private Team team;
+    private TeamModel team;
 
     @Override
     public String getName() {

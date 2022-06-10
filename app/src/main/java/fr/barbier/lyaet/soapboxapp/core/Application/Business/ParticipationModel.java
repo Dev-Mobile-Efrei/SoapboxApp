@@ -6,6 +6,7 @@ import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
 import java.util.Collection;
+import java.util.Collections;
 
 import fr.barbier.lyaet.soapboxapp.core.domain.Grade;
 import fr.barbier.lyaet.soapboxapp.core.domain.Participation;
@@ -16,13 +17,13 @@ import fr.barbier.lyaet.soapboxapp.core.domain.Team;
 public class ParticipationModel extends BasicModel implements Participation {
 
     @DatabaseField(canBeNull = false, foreign = true)
-    private Race race;
+    private RaceModel race;
 
     @DatabaseField(canBeNull = false, foreign = true)
-    private Team team;
+    private TeamModel team;
 
     @ForeignCollectionField(eager = true, orderColumnName = "participation")
-    private ForeignCollection<Grade> grades;
+    private ForeignCollection<GradeModel> grades;
 
     @DatabaseField
     private String time;
@@ -42,7 +43,7 @@ public class ParticipationModel extends BasicModel implements Participation {
 
     @Override
     public Collection<Grade> getGrades() {
-        return grades;
+        return Collections.unmodifiableCollection(this.grades);
     }
 
     @Override

@@ -22,12 +22,7 @@ public class RaceModel extends BasicModel implements Race {
     private Date date;
 
     @ForeignCollectionField(orderColumnName = "race")
-    private ForeignCollection<Participation> participations;
-
-    public RaceModel(String name, Date date) {
-        this.name = name;
-        this.date = date;
-    }
+    private ForeignCollection<ParticipationModel> participations;
 
     @Override
     public String getName() {

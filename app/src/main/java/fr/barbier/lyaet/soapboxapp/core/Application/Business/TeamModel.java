@@ -18,7 +18,7 @@ public class TeamModel extends BasicModel implements Team {
     private String name;
 
     @ForeignCollectionField(orderColumnName = "team")
-    private ForeignCollection<Member> members;
+    private ForeignCollection<MemberModel> members;
 
     @DatabaseField
     private String nationality;
