@@ -8,10 +8,10 @@ import com.j256.ormlite.table.DatabaseTable;
 import java.util.Collection;
 import java.util.Collections;
 
-import fr.barbier.lyaet.soapboxapp.core.domain.Grade;
-import fr.barbier.lyaet.soapboxapp.core.domain.Participation;
-import fr.barbier.lyaet.soapboxapp.core.domain.Race;
-import fr.barbier.lyaet.soapboxapp.core.domain.Team;
+import fr.barbier.lyaet.soapboxapp.core.domain.model.Grade;
+import fr.barbier.lyaet.soapboxapp.core.domain.model.Participation;
+import fr.barbier.lyaet.soapboxapp.core.domain.model.Race;
+import fr.barbier.lyaet.soapboxapp.core.domain.model.Team;
 
 @DatabaseTable(tableName = "participation")
 public class ParticipationModel extends BasicModel implements Participation {

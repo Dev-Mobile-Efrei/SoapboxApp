@@ -3,8 +3,8 @@ package fr.barbier.lyaet.soapboxapp.core.Application.Business;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
-import fr.barbier.lyaet.soapboxapp.core.domain.Grade;
-import fr.barbier.lyaet.soapboxapp.core.domain.Participation;
+import fr.barbier.lyaet.soapboxapp.core.domain.model.Grade;
+import fr.barbier.lyaet.soapboxapp.core.domain.model.Participation;
 
 @DatabaseTable(tableName = "grade")
 public class GradeModel extends BasicModel implements Grade {
