@@ -10,4 +10,8 @@ public abstract class Repository<T extends BasicModel> {
     public Dao<T, Integer> getDao() {
         return this.dao;
     }
+
+    public Repository(Dao<T, Integer> dao) {
+        this.dao = dao;
+    }
 }

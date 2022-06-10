@@ -16,7 +16,7 @@ public class GradeModel extends BasicModel implements Grade {
     private int value;
 
     @DatabaseField(canBeNull = false, foreign = true)
-    private Participation participation;
+    private ParticipationModel participation;
 
     @Override
     public String getJury() {
