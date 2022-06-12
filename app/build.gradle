@@ -32,6 +32,6 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    implementation 'com.j256.ormlite:ormlite-android:4.45'
-    implementation 'com.j256.ormlite:ormlite-jdbc:4.45'
+    implementation 'com.j256.ormlite:ormlite-jdbc:6.1'
+    implementation 'mysql:mysql-connector-java:5.1.46'
 }
