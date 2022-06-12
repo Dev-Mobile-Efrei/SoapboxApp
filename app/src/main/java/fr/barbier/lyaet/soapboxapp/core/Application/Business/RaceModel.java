@@ -5,12 +5,13 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
+import java.time.Instant;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 
-import fr.barbier.lyaet.soapboxapp.core.domain.Participation;
-import fr.barbier.lyaet.soapboxapp.core.domain.Race;
+import fr.barbier.lyaet.soapboxapp.core.domain.model.Participation;
+import fr.barbier.lyaet.soapboxapp.core.domain.model.Race;
 
 @DatabaseTable(tableName = "race")
 public class RaceModel extends BasicModel implements Race {
@@ -37,5 +38,13 @@ public class RaceModel extends BasicModel implements Race {
     @Override
     public Date getDate() {
         return date;
+    }
+
+    public static RaceModel create(String name)
+    {
+        RaceModel raceModel = new RaceModel();
+        raceModel.name = name;
+        raceModel.date = Date.from(Instant.now());
+        return raceModel;
     }
 }

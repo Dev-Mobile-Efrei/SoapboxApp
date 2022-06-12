@@ -5,8 +5,8 @@ import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
 
-import fr.barbier.lyaet.soapboxapp.core.domain.Member;
-import fr.barbier.lyaet.soapboxapp.core.domain.Team;
+import fr.barbier.lyaet.soapboxapp.core.domain.model.Member;
+import fr.barbier.lyaet.soapboxapp.core.domain.model.Team;
 
 import java.util.Collection;
 import java.util.Collections;

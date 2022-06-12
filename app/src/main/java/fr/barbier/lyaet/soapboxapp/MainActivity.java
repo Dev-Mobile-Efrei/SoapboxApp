@@ -5,6 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.sql.SQLException;
 
+import fr.barbier.lyaet.soapboxapp.core.Application.Business.TeamModel;
+import fr.barbier.lyaet.soapboxapp.core.Application.api.SoapboxApi;
+import fr.barbier.lyaet.soapboxapp.core.Application.repository.RaceRepository;
+import fr.barbier.lyaet.soapboxapp.core.Application.repository.TeamRepository;
+import fr.barbier.lyaet.soapboxapp.core.domain.utils.Logger;
 import fr.barbier.lyaet.soapboxapp.core.infrastructure.DefaultDatabaseHelper;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,27 +19,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.setContentView(R.layout.activity_main);
 
-        Thread threadInitDataBase = new Thread(() -> {
-            String url = getResources().getString(R.string.database_url);
-            String username = getResources().getString(R.string.database_username);
-            String password = getResources().getString(R.string.database_password);
-            DefaultDatabaseHelper defaultDatabaseHelper =
-                    new DefaultDatabaseHelper(url,
-                                              username,
-                                              password);
-            try {
-                System.out.println("Initalizing db");
-                defaultDatabaseHelper.startDatabasde();
-                defaultDatabaseHelper.initRepositories();
-            }catch(ClassNotFoundException | IllegalAccessException | InstantiationException throwables) {
-                System.err.println(throwables.getMessage());
-            } catch (SQLException throwables) {
-                System.err.println(throwables.getSQLState());
-                System.err.println(throwables.getMessage());
-                System.err.println(throwables.getErrorCode());
-            }
-        });
-        threadInitDataBase.start();
+        String url = this.getResources().getString(R.string.database_url);
+        String username = this.getResources().getString(R.string.database_username);
+        String password = this.getResources().getString(R.string.database_password);
+
+        SoapboxApi soapboxApi = new SoapboxApi(
+                url,
+                username,
+                password,
+                new ConsoleLogger());
+        Thread apiThread = new Thread(soapboxApi);
+        apiThread.start();
 
     }
 }
