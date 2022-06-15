@@ -1,16 +1,12 @@
 package fr.barbier.lyaet.soapboxapp;
 
 import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.sql.SQLException;
-
-import fr.barbier.lyaet.soapboxapp.core.Application.Business.TeamModel;
 import fr.barbier.lyaet.soapboxapp.core.Application.api.SoapboxApi;
-import fr.barbier.lyaet.soapboxapp.core.Application.repository.RaceRepository;
-import fr.barbier.lyaet.soapboxapp.core.Application.repository.TeamRepository;
-import fr.barbier.lyaet.soapboxapp.core.domain.utils.Logger;
-import fr.barbier.lyaet.soapboxapp.core.infrastructure.DefaultDatabaseHelper;
+import fr.barbier.lyaet.soapboxapp.location.service.LocationService;
+import fr.barbier.lyaet.soapboxapp.location.service.TextViewLocationUpdater;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,7 +25,12 @@ public class MainActivity extends AppCompatActivity {
                 password,
                 new ConsoleLogger());
         Thread apiThread = new Thread(soapboxApi);
+
         apiThread.start();
 
+        LocationService locationService = new LocationService(this,new TextViewLocationUpdater(
+                this.findViewById(R.id.resultTextbox)
+        ));
+        locationService.requestForLocation();
     }
 }
