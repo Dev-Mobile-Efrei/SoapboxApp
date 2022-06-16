@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="btnCreateRace">Créer une course</string>
+    <string name="cancelBtn">Annuler</string>
+    <string name="NameOfRaceLabel">Nom de la course</string>
+</resources>

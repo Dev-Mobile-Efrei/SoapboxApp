@@ -7,5 +7,6 @@ public interface Race {
     long getId();
     String getName();
     Collection<Participation> getParticipations();
+    String getAddress();
     Date getDate();
 }
