@@ -1,7 +1,9 @@
 package fr.barbier.lyaet.soapboxapp;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -80,5 +82,11 @@ public class RaceListActivity extends AppCompatActivity {
 
         this.runOnUiThread(this::createColumns);
         this.runOnUiThread(() -> this.fillData(races));
+    }
+
+    public void onCreateRaceHandlerActivity(View view)
+    {
+        Intent intent = new Intent(this, CreateRaceActivity.class);
+        this.startActivity(intent);
     }
 }
