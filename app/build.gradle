@@ -35,4 +35,5 @@ dependencies {
     implementation 'com.j256.ormlite:ormlite-jdbc:6.1'
     implementation 'mysql:mysql-connector-java:5.1.46'
     implementation 'org.jetbrains:annotations:20.1.0'
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
 }

@@ -22,6 +22,9 @@ public class RaceModel extends BasicModel implements Race {
     @DatabaseField()
     private Date date;
 
+    @DatabaseField
+    private String address;
+
     @ForeignCollectionField(orderColumnName = "race")
     private ForeignCollection<ParticipationModel> participations;
 
@@ -36,6 +39,11 @@ public class RaceModel extends BasicModel implements Race {
     }
 
     @Override
+    public String getAddress() {
+        return this.address;
+    }
+
+    @Override
     public Date getDate() {
         return date;
     }
@@ -45,6 +53,12 @@ public class RaceModel extends BasicModel implements Race {
         RaceModel raceModel = new RaceModel();
         raceModel.name = name;
         raceModel.date = Date.from(Instant.now());
+        return raceModel;
+    }
+    public static RaceModel create(String name, Date date, String address) {
+        RaceModel raceModel = new RaceModel();
+        raceModel.name = name;
+        raceModel.date = date;
         return raceModel;
     }
 }
