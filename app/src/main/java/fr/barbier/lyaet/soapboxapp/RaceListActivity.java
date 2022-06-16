@@ -78,7 +78,7 @@ public class RaceListActivity extends AppCompatActivity {
     private void loadData() {
         Collection<RaceModel> races = RaceRepository.get().getAll();
 
-        this.createColumns();
-        this.fillData(races);
+        this.runOnUiThread(this::createColumns);
+        this.runOnUiThread(() -> this.fillData(races));
     }
 }

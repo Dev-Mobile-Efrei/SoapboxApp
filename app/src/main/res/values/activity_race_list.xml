@@ -4,4 +4,5 @@
     <string name="columnName_id">Id</string>
     <string name="columnName_name">Name</string>
     <string name="columnName_date">Date</string>
+    <string name="btnAddRace_text">+</string>
 </resources>
