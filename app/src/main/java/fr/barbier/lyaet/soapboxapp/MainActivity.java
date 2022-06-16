@@ -4,7 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
+
 import fr.barbier.lyaet.soapboxapp.core.Application.api.SoapboxApi;
+import fr.barbier.lyaet.soapboxapp.location.service.LocationService;
+import fr.barbier.lyaet.soapboxapp.location.service.TextViewLocationUpdater;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
 
         SoapboxApi soapboxApi = new SoapboxApi(url, username, password, new ConsoleLogger());
         Thread apiThread = new Thread(soapboxApi);
+
         apiThread.start();
+
+        LocationService locationService = new LocationService(this,new TextViewLocationUpdater(
+                this.findViewById(R.id.resultTextbox)
+        ));
+        locationService.requestForLocation();
     }
 }
