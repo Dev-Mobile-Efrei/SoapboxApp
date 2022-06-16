@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="btns_marginBottom">50dp</dimen>
+    <dimen name="btns_marginHorizontal">30dp</dimen>
+    <string name="title">Soapbox Race App</string>
+    <string name="btnRaceList_title">Liste des courses</string>
+    <string name="btnTeamList">Liste des équipes</string>
+</resources>
