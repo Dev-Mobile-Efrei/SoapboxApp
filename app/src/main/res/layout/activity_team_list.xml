@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".TeamListActivity"
+        android:orientation="vertical">
+
+    <TextView
+            android:text="@string/titleTeamList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/titleRaceList"
+            android:textAlignment="center"
+            android:textSize="20sp"/>
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="1">
+
+        <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/teamTableLayout"/>
+    </ScrollView>
+
+    <Button
+            android:text="@string/btnAddTeam_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnAddTeam"
+            android:minWidth="40dp"
+            android:minHeight="40dp"
+            android:layout_gravity="bottom|right"
+            android:layout_margin="10dp"/>
+
+</LinearLayout>

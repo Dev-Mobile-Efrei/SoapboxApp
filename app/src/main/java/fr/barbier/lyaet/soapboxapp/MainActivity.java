@@ -13,6 +13,11 @@ public class MainActivity extends AppCompatActivity {
         this.startActivity(intent);
     }
 
+    public void onBtnTeamList_Click(View view) {
+        Intent intent = new Intent(this, TeamListActivity.class);
+        this.startActivity(intent);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

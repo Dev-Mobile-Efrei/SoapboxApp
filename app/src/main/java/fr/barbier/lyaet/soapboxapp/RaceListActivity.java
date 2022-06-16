@@ -38,9 +38,9 @@ public class RaceListActivity extends AppCompatActivity {
         tableRow.setLayoutParams(new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         tableRow.setBackground(this.getResources().getDrawable(R.drawable.datatable_row_shape, null));
 
-        tableRow.addView(this.createHeaderTextView(this.getResources().getString(R.string.columnName_id)));
-        tableRow.addView(this.createHeaderTextView(this.getResources().getString(R.string.columnName_name)));
-        tableRow.addView(this.createHeaderTextView(this.getResources().getString(R.string.columnName_date)));
+        tableRow.addView(this.createHeaderTextView(this.getResources().getString(R.string.raceList_columnName_id)));
+        tableRow.addView(this.createHeaderTextView(this.getResources().getString(R.string.raceList_columnName_name)));
+        tableRow.addView(this.createHeaderTextView(this.getResources().getString(R.string.raceList_columnName_date)));
 
         this.tableLayout.addView(tableRow, new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
     }

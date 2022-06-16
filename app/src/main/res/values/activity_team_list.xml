@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="titleTeamList">Liste des équipes</string>
+    <string name="teamList_columnName_id">Id</string>
+    <string name="teamList_columnName_name">Nom d\'équipe</string>
+    <string name="teamList_columnName_members">Membres</string>
+    <string name="teamList_columnName_nationality">Nationalité</string>
+    <string name="btnAddTeam_text">+</string>
+</resources>
