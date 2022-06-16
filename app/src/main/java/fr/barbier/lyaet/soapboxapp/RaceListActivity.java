@@ -12,7 +12,6 @@ import fr.barbier.lyaet.soapboxapp.core.Application.repository.RaceRepository;
 import fr.barbier.lyaet.soapboxapp.core.domain.model.Race;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Locale;
