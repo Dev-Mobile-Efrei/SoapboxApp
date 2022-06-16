@@ -34,6 +34,7 @@
             android:id="@+id/button2"
             android:layout_marginBottom="@dimen/btns_marginBottom"
             android:text="@string/btnTeamList"
-            android:layout_marginHorizontal="@dimen/btns_marginHorizontal"/>
+            android:layout_marginHorizontal="@dimen/btns_marginHorizontal"
+            android:onClick="onBtnTeamList_Click"/>
 
 </LinearLayout>
