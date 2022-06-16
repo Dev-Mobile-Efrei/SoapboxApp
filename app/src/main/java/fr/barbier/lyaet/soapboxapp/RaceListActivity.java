@@ -26,7 +26,7 @@ public class RaceListActivity extends AppCompatActivity {
         this.setContentView(R.layout.activity_race_list);
         this.tableLayout = this.findViewById(R.id.raceTableLayout);
 
-        this.loadData();
+        new Thread(this::loadData).start();
     }
 
     private static @NotNull String DateToString(@NotNull Date date) {
