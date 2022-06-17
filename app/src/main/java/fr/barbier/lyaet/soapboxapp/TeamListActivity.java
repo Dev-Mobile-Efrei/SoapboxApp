@@ -45,7 +45,6 @@ public class TeamListActivity extends AppCompatActivity {
         tableRow.setLayoutParams(new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         tableRow.setBackground(this.getResources().getDrawable(R.drawable.datatable_row_shape, null));
 
-        tableRow.addView(this.createHeaderTextView(this.getResources().getString(R.string.teamList_columnName_id)));
         tableRow.addView(this.createHeaderTextView(this.getResources().getString(R.string.teamList_columnName_name)));
         tableRow.addView(this.createHeaderTextView(this.getResources()
                                                        .getString(R.string.teamList_columnName_members)));
@@ -82,7 +81,6 @@ public class TeamListActivity extends AppCompatActivity {
                                                          member.getLastName().toUpperCase(Locale.ROOT) + "\n")
                                           .collect(Collectors.joining());
 
-            tableRow.addView(this.createTextView(String.format(Locale.FRENCH, "%d", team.getId())));
             tableRow.addView(this.createTextView(team.getName()));
             tableRow.addView(this.createTextView(membersString));
             tableRow.addView(this.createTextView(team.getNationality()));
