@@ -1,7 +1,9 @@
 package fr.barbier.lyaet.soapboxapp;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -22,6 +24,11 @@ import java.util.stream.Collectors;
 public class TeamListActivity extends AppCompatActivity {
 
     private TableLayout tableLayout = null;
+
+    public void onBtnAddTeam(View view) {
+        Intent intent = new Intent(this, CreateTeamActivity.class);
+        this.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +66,6 @@ public class TeamListActivity extends AppCompatActivity {
         output.setText(text);
         output.setTypeface(Typeface.DEFAULT);
         output.setPadding(5, 5, 5, 0);
-        output.setLayoutParams(new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
 
         return output;
     }
