@@ -23,10 +23,16 @@
             android:layout_marginTop="10dp"
             android:layout_weight="1">
 
-        <TableLayout
+        <HorizontalScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/teamTableLayout"/>
+                android:layout_height="wrap_content">
+
+            <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/teamTableLayout"/>
+
+        </HorizontalScrollView>
     </ScrollView>
 
     <Button
