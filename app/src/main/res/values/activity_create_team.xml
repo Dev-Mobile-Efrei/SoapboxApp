@@ -4,7 +4,7 @@
     <string name="createTeam_inputNationality_text">Nationalité</string>
     <string name="createTeam_members_text">Membres :</string>
     <string name="createTeam_btnAddMember_text">Ajouter un membre</string>
-    <string name="createTeam_teamName_text">Nom d\équipe :</string>
+    <string name="createTeam_teamName_text">Nom d\'équipe :</string>
     <string name="createTeam_nationality_text">Nationalité :</string>
     <string name="createTeam_btnCreateTeam_text">Créer l\'équipe</string>
 </resources>

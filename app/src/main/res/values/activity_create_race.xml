@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="btnCreateRace">Créer une course</string>
-    <string name="cancelBtn">Annuler</string>
-    <string name="NameOfRaceLabel">Nom de la course</string>
+    <string name="createRace_btnCreateRace_text">Créer la course</string>
+    <string name="createRace_raceName_text">Nom de la course :</string>
+    <string name="createRace_date_text">Date de la course :</string>
+    <string name="createRace_address_text">Adresse de la course :</string>
+    <string name="createRace_title">Créer une course</string>
 </resources>
