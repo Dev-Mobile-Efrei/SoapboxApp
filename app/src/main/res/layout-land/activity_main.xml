@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:orientation="vertical"
+        >
+
+    <ImageView
+            android:layout_width="189dp"
+            android:layout_height="106dp"
+            app:srcCompat="@drawable/bluebull_logo"
+            android:id="@+id/imageView"
+            android:layout_gravity="right|top"
+            tools:ignore="ImageContrastCheck"/>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+        <TextView
+                android:text="@string/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/titleTextView"
+                android:textAlignment="center"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="100dp"/>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnRaceList"
+                    android:layout_marginBottom="@dimen/btns_marginBottom"
+                    android:text="@string/btnRaceList_title"
+                    android:layout_marginHorizontal="@dimen/btns_marginHorizontal"
+                    android:onClick="onBtnRaceList_Click"
+                    android:layout_weight="1"/>
+
+            <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/button2"
+                    android:layout_marginBottom="@dimen/btns_marginBottom"
+                    android:text="@string/btnTeamList"
+                    android:layout_marginHorizontal="@dimen/btns_marginHorizontal"
+                    android:onClick="onBtnTeamList_Click"
+                    android:layout_weight="1"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
