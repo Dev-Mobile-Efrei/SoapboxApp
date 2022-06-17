@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">SoapboxApp</string>
-    <string name="database_url">jdbc:mysql://10.0.2.2:3306/soapbox</string>
-    <string name="database_username">root</string>
-    <string name="database_password">louis1610</string>
+    <string name="app_name" translatable="false">SoapboxApp</string>
+    <string name="database_url" translatable="false">jdbc:mysql://10.0.2.2:3306/soapbox</string>
+    <string name="database_username" translatable="false">root</string>
+    <string name="database_password" translatable="false">louis1610</string>
 </resources>

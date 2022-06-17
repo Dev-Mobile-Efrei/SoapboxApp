@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="createTeam_title">Create a team</string>
+    <string name="createTeam_members_text">Members :</string>
+    <string name="createTeam_btnAddMember_text">Add a member</string>
+    <string name="createTeam_teamName_text">Team\'s name :</string>
+    <string name="createTeam_nationality_text">Team\'s nationality:</string>
+    <string name="createTeam_btnCreateTeam_text">Create the team</string>
+</resources>

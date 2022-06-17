@@ -4,5 +4,5 @@
     <string name="raceList_columnName_name">Nom</string>
     <string name="raceList_columnName_date">Date</string>
     <string name="raceList_columnName_address">Adresse</string>
-    <string name="btnAddRace_text">+</string>
+    <string name="btnAddRace_text" translatable="false">+</string>
 </resources>

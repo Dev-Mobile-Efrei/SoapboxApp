@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="createRace_btnCreateRace_text">Create the race</string>
+    <string name="createRace_raceName_text">Race\'s name :</string>
+    <string name="createRace_date_text">Race\'s date :</string>
+    <string name="createRace_address_text">Race\'s address :</string>
+    <string name="createRace_title">Create a race</string>
+</resources>

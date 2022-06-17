@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="titleTeamList">Team list</string>
+    <string name="teamList_columnName_name">Team\'s name</string>
+    <string name="teamList_columnName_members">Members</string>
+    <string name="teamList_columnName_nationality">Nationality</string>
+</resources>
