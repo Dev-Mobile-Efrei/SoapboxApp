@@ -79,6 +79,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/btnCreateRace"
             android:layout_margin="10dp"
-            />
+            android:onClick="createRace"/>
 
 </LinearLayout>

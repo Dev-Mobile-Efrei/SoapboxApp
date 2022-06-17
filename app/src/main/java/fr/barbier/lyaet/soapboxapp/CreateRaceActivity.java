@@ -28,10 +28,6 @@ public class CreateRaceActivity extends AppCompatActivity {
 
     private EditText raceNameTextEdit;
 
-    public void cancelCreate(View view) {
-        this.returnToList();
-    }
-
     public void createRace(View view) {
         if (this.raceNameTextEdit.getText().toString().isEmpty()) {
             return;
@@ -42,13 +38,7 @@ public class CreateRaceActivity extends AppCompatActivity {
                                                                     .toString(), date, this.addressEditText.getText()
                                                                                                            .toString());
 
-        Thread createRaceThread = new Thread(new Runnable() {
-
-            @Override
-            public void run() {
-                RaceRepository.get().insert(raceModel);
-            }
-        });
+        Thread createRaceThread = new Thread(() -> RaceRepository.get().insert(raceModel));
         createRaceThread.start();
         this.returnToList();
     }
