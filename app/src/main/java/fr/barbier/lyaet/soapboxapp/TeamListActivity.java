@@ -3,8 +3,11 @@ package fr.barbier.lyaet.soapboxapp;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -50,6 +53,8 @@ public class TeamListActivity extends AppCompatActivity {
                                                        .getString(R.string.teamList_columnName_members)));
         tableRow.addView(this.createHeaderTextView(this.getResources()
                                                        .getString(R.string.teamList_columnName_nationality)));
+        tableRow.addView(this.createHeaderTextView(this.getResources()
+                                                       .getString(R.string.teamList_columnName_picture)));
 
         this.tableLayout.addView(tableRow, new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
     }
@@ -57,6 +62,20 @@ public class TeamListActivity extends AppCompatActivity {
     private @NotNull TextView createHeaderTextView(@NotNull CharSequence text) {
         TextView output = this.createTextView(text);
         output.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
+        return output;
+    }
+
+    private @NotNull ImageButton createPictureButton() {
+        TableRow.LayoutParams layoutParams = new TableRow.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        layoutParams.gravity = Gravity.CENTER;
+
+        ImageButton output = new ImageButton(this);
+        output.setMinimumHeight(150);
+        output.setMinimumWidth(200);
+        output.setLayoutParams(layoutParams);
+        output.setImageResource(R.drawable.camera_logo);
+        output.setPadding(5, 5, 5, 0);
+        output.setOnClickListener(this::onBtnPictureClick);
         return output;
     }
 
@@ -84,6 +103,7 @@ public class TeamListActivity extends AppCompatActivity {
             tableRow.addView(this.createTextView(team.getName()));
             tableRow.addView(this.createTextView(membersString));
             tableRow.addView(this.createTextView(team.getNationality()));
+            tableRow.addView(this.createPictureButton());
 
             this.tableLayout.addView(tableRow, new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         }
@@ -95,5 +115,16 @@ public class TeamListActivity extends AppCompatActivity {
 
         this.runOnUiThread(this::createColumns);
         this.runOnUiThread(() -> this.fillData(teams, members));
+    }
+
+    private void onBtnPictureClick(View view) {
+        try {
+            Intent intent = new Intent();
+            intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
+
+            this.startActivity(intent);
+        } catch (RuntimeException e) {
+            System.err.println(e.getMessage());
+        }
     }
 }

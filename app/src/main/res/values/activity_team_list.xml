@@ -4,5 +4,6 @@
     <string name="teamList_columnName_name">Nom d\'équipe</string>
     <string name="teamList_columnName_members">Membres</string>
     <string name="teamList_columnName_nationality">Nationalité</string>
+    <string name="teamList_columnName_picture">Photo</string>
     <string name="btnAddTeam_text" translatable="false">+</string>
 </resources>
