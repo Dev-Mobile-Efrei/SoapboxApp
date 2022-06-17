@@ -16,11 +16,15 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Collection;
 import java.util.Date;
-import java.util.Locale;
 
 public class RaceListActivity extends AppCompatActivity {
 
     private TableLayout tableLayout = null;
+
+    public void onCreateRaceHandlerActivity(View view) {
+        Intent intent = new Intent(this, CreateRaceActivity.class);
+        this.startActivity(intent);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +44,10 @@ public class RaceListActivity extends AppCompatActivity {
         tableRow.setLayoutParams(new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         tableRow.setBackground(this.getResources().getDrawable(R.drawable.datatable_row_shape, null));
 
-        tableRow.addView(this.createHeaderTextView(this.getResources().getString(R.string.raceList_columnName_id)));
         tableRow.addView(this.createHeaderTextView(this.getResources().getString(R.string.raceList_columnName_name)));
         tableRow.addView(this.createHeaderTextView(this.getResources().getString(R.string.raceList_columnName_date)));
+        tableRow.addView(this.createHeaderTextView(this.getResources()
+                                                       .getString(R.string.raceList_columnName_address)));
 
         this.tableLayout.addView(tableRow, new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
     }
@@ -69,9 +74,9 @@ public class RaceListActivity extends AppCompatActivity {
             tableRow.setLayoutParams(new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
             tableRow.setBackground(this.getResources().getDrawable(R.drawable.datatable_row_shape, null));
 
-            tableRow.addView(this.createTextView(String.format(Locale.FRENCH, "%d", race.getId())));
             tableRow.addView(this.createTextView(race.getName()));
             tableRow.addView(this.createTextView(DateToString(race.getDate())));
+            tableRow.addView(this.createTextView(race.getAddress()));
 
             this.tableLayout.addView(tableRow, new TableLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         }
@@ -82,11 +87,5 @@ public class RaceListActivity extends AppCompatActivity {
 
         this.runOnUiThread(this::createColumns);
         this.runOnUiThread(() -> this.fillData(races));
-    }
-
-    public void onCreateRaceHandlerActivity(View view)
-    {
-        Intent intent = new Intent(this, CreateRaceActivity.class);
-        this.startActivity(intent);
     }
 }

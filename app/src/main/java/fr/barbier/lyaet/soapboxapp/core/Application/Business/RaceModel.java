@@ -4,38 +4,42 @@ import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.field.ForeignCollectionField;
 import com.j256.ormlite.table.DatabaseTable;
+import fr.barbier.lyaet.soapboxapp.core.domain.model.Participation;
+import fr.barbier.lyaet.soapboxapp.core.domain.model.Race;
 
 import java.time.Instant;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 
-import fr.barbier.lyaet.soapboxapp.core.domain.model.Participation;
-import fr.barbier.lyaet.soapboxapp.core.domain.model.Race;
-
 @DatabaseTable(tableName = "race")
 public class RaceModel extends BasicModel implements Race {
-
-    @DatabaseField()
-    private String name;
-
-    @DatabaseField()
-    private Date date;
 
     @DatabaseField
     private String address;
 
+    @DatabaseField
+    private Date date;
+
+    @DatabaseField
+    private String name;
+
     @ForeignCollectionField(orderColumnName = "race")
     private ForeignCollection<ParticipationModel> participations;
 
-    @Override
-    public String getName() {
-        return name;
+    public static RaceModel create(String name) {
+        RaceModel raceModel = new RaceModel();
+        raceModel.name = name;
+        raceModel.date = Date.from(Instant.now());
+        return raceModel;
     }
 
-    @Override
-    public Collection<Participation> getParticipations() {
-        return Collections.unmodifiableCollection(this.participations);
+    public static RaceModel create(String name, Date date, String address) {
+        RaceModel raceModel = new RaceModel();
+        raceModel.name = name;
+        raceModel.date = date;
+        raceModel.address = address;
+        return raceModel;
     }
 
     @Override
@@ -45,20 +49,16 @@ public class RaceModel extends BasicModel implements Race {
 
     @Override
     public Date getDate() {
-        return date;
+        return this.date;
     }
 
-    public static RaceModel create(String name)
-    {
-        RaceModel raceModel = new RaceModel();
-        raceModel.name = name;
-        raceModel.date = Date.from(Instant.now());
-        return raceModel;
+    @Override
+    public String getName() {
+        return this.name;
     }
-    public static RaceModel create(String name, Date date, String address) {
-        RaceModel raceModel = new RaceModel();
-        raceModel.name = name;
-        raceModel.date = date;
-        return raceModel;
+
+    @Override
+    public Collection<Participation> getParticipations() {
+        return Collections.unmodifiableCollection(this.participations);
     }
 }
